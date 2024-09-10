@@ -1,0 +1,40 @@
+-- join 
+-- create db my institute
+-- create table course c_id and c_name
+-- 1 java 2 python 3 js
+-- create one more table students s_id s_name c_id
+-- 101 raj 2,102 meg 5 , 103 ram 3, 104 ajay 6
+
+show databases;
+create database myinstitute;
+use myinstitute;
+show tables;
+create table courses(
+c_id INT PRIMARY KEY,
+c_name VARCHAR(100));
+show tables;
+select * from courses;
+insert into courses  values
+(1,'java'),(2,'python'),(3,'js');
+select * from courses;
+ 
+ create table student (
+ s_id INT PRIMARY KEY,
+    s_name VARCHAR(100) ,
+    c_id int);-
+show tables;
+select * from student;
+insert into student values
+(101,'raj',2),(102,'meg',1),(103,'ram',3);
+select * from student;
+select * from courses inner join student 
+on courses.c_id = student.c_id;
+
+-- left join
+select * from courses left join student 
+on courses.c_id = student.c_id;
+
+-- right join
+select * from courses right join student 
+on courses.c_id = student.c_id;
+
